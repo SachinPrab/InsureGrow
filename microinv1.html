@@ -60,23 +60,22 @@ p {
         <a href = "aboutus.html">About Us</a><br><br>
         Help spread the word about our website!
         <div class = "sociallogo">
-          <script src = "sharer.js" type = "text/javascript">
-         <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\facebooklogo.png" onclick = "Sharer.add">
+                  <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\facebooklogo.png">
          <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\twitterlogo.jpeg"></button>
          <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\linkedinlogo.png"></button>
         <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\redditlogo.png"></button>
        <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\whatsapplogo.png"> </button>
          <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\gmaillogo.png"> </button>
-          </script>
-        </div>
+                  </div>
         </p>
-  <script>
+  <script type = "text/javascript">
     function goToPage() {
       var url = document.getElementById("page-select").value;
       if (url) {
         window.location.href = url;
       }
     }
+    navigator.share({title: InsureGrow, url: new URL("C:\Users\User\Desktop\microinvestment\microinvestment 3\microinv1.html").href, text: 'Welcome to InsureGrow'});
   </script>
       </center>
       </p>
