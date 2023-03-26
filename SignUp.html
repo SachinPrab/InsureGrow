@@ -27,7 +27,8 @@
     </p>
     </form>
     <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+ {
 	// Get the form data
 	$name = $_POST["name"];
 	$username = $_POST["username"];
@@ -38,11 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$date_of_birth = $_POST["date_of_birth"];
 	$occupation = $_POST["occupation"];
 	$annual_income = $_POST["annual_income"];
-if (isset($_POST["terms"])) {
-                $terms = test_input($_POST["terms"]);
-            } else {
-                $terms = "";
-            }
+if (isset($_POST["terms"])) 
+$terms = test_input($_POST["terms"]);
+  else 
+ $terms = "";
 
             echo "<h2>Your Input:</h2>";
             echo "Name: " . $name . "<br>";
