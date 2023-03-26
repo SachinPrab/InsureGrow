@@ -1,7 +1,7 @@
 <?php 
-$username = $_POST["username"];
-  $password = $_POST["password"];
- if ($username == 'admin' && $password == 'password123') {
+$Username = $_POST["username"];
+  $Password = $_POST["password"];
+ if ($Username == 'admin' && $Password == 'password123') {
     header('Location: dashboard.php');
     exit;
   } else {
