@@ -20,10 +20,52 @@
         <label for = "date_of_birth"> Date Of Birth </label> <input type = "date" name = "date_of_birth" required><br><br>
        <label for = "occupation"> Occupation </label> <input type = "text" name = "occupation" placeholder = "Enter your occupation" required><br><br>
         <label for = "annual_income"> Annual Income </label> <input type = "text" name = "annual_income" placeholder = "Enter your income" required><br><br>
-        <input type = "checkbox"> I Accept the Terms and Conditions Of The Website (Read Terms and Conditions<a href = "termsconditions.html"> of our website here.)<br><br>
+         <label for="terms"> I Accept the Terms and Conditions Of The Website (Read Terms and Conditions<a href = "termsconditions.html"> of our website here.) </label>
+        <input type="checkbox" id="terms" name="terms" required><br><br><br><br>
     <input type ="Submit" placeholder ="Submit"><br>
       </center>
     </p>
     </form>
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	// Get the form data
+	$name = $_POST["name"];
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+	$email = $_POST["email"];
+	$address = $_POST["address"];
+	$phone_number = $_POST["phone_number"];
+	$date_of_birth = $_POST["date_of_birth"];
+	$occupation = $_POST["occupation"];
+	$annual_income = $_POST["annual_income"];
+if (isset($_POST["terms"])) {
+                $terms = test_input($_POST["terms"]);
+            } else {
+                $terms = "";
+            }
+
+            echo "<h2>Your Input:</h2>";
+            echo "Name: " . $name . "<br>";
+            echo "Email: " . $email . "<br>";
+            echo "Phone Number: " . $phone . "<br>";
+            echo "Username: " . $username . "<br>";
+            echo "Password: " . $password . "<br>";
+            echo "Address: " . $address . "<br>";
+            echo "Date of Birth: " . $dob . "<br>";
+            echo "Occupation: " . $occupation . "<br>";
+            echo "Terms and Conditions: " . $terms . "<br>";
+        }
+
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+    header("Location: success.php");
+    exit();
+}
+}
+?>
   </body>
 </html>
