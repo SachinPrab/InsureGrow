@@ -8,26 +8,26 @@
     input: border: 2px solid black;
   </style>
   <body>
-    <form method = "post" action = "signup.php">
+    <form method = "post" action = "signup.php" enctype="multipart/form-data">
     <p>
       <center>
-    Name <input type ="text" placeholder ="name"><br><br>
-    User Name <input type ="text" placeholder="UserName"><br><br>
-    Password <input type ="Password"><br><br>
-    Email <input type ="text" placeholder ="Email"><br><br>
-    Address <input type ="text" placeholder ="Address"><br><br>
-    Phone Number <input type ="text" placeholder ="Phone Number"><br><br>
-        Date Of Birth <input type = "date"><br><br>
-        Occupation <input type = "text" placeholder = "Enter your occupation"><br><br>
-        Annual Income <input type = "text" placeholder = "Enter your income"><br><br>
-        Bank Account Holder Name <input type = "text"><br><br>
-        Bank Name <input type = "text" placeholder = "Bank name"><br><br>
-Bank Account Number <input type ="text" placeholder = "Bank account number"><br><br>
-  IFSC Code <input type ="text" placeholder ="IFSC Code"><br><br>
-    Pan Card Number <input type ="text" placeholder ="Pan Card Number"><br><br>
-    Aadhar Card Number <input type ="text" placeholder="Aadhar Card Number"><br><br>
-        Voter ID number <input type = "text" placeholder="Voter ID number"><br><br>
-        Voter ID card scan or photo <input type="file" accept="image/*"><br><br>
+    Name <input type ="text" name = "name" placeholder ="name" required><br><br>
+    User Name <input type ="text" name = "username" placeholder="UserName" required><br><br>
+    Password <input type ="Password" name = "password" required><br><br>
+    Email <input type ="text" name = "email" placeholder ="Email" required><br><br>
+    Address <input type ="text" name = "address" placeholder ="Address" required><br><br>
+    Phone Number <input type ="text" name = "phone_number" placeholder ="Phone Number" required><br><br>
+        Date Of Birth <input type = "date" name = "date_of_birth" required><br><br>
+        Occupation <input type = "text" name = "occupation" placeholder = "Enter your occupation" required><br><br>
+        Annual Income <input type = "text" name = "annual_income" placeholder = "Enter your income" required><br><br>
+        Bank Account Holder Name <input type = "text" name = "bank_account_holder_name" required><br><br>
+        Bank Name <input type = "text" name = "bank_name" placeholder = "Bank name" required><br><br>
+Bank Account Number <input type ="text" bank_account_number" placeholder = "Bank account number" required><br><br>
+  IFSC Code <input type ="text" name = "ifsc_code" placeholder ="IFSC Code" required><br><br>
+    Pan Card Number <input type ="text" name = "pan_card_number" placeholder ="Pan Card Number" required><br><br>
+    Aadhar Card Number <input type ="text" name = "aadhar_card_number" placeholder="Aadhar Card Number" required><br><br>
+        Voter ID number <input type = "text" name = "voter_id_number" placeholder="Voter ID number" required><br><br>
+        Voter ID card scan or photo <input type="file" accept="image/*" required><br><br>
         <input type = "checkbox"> I Accept the Terms and Conditions Of The Website (Read Terms and Conditions<a href = "termsconditions.html"> of our website here.)<br><br>
     <input type ="Submit" placeholder ="Submit"><br>
       </center>
