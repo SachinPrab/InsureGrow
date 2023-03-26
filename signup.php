@@ -1,10 +1,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Get the form data
+	$name = $_POST["name"];
 	$username = $_POST["username"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
-	$name = $_POST["name"];
 	$address = $_POST["address"];
 	$phone_number = $_POST["phone_number"];
 	$date_of_birth = $_POST["date_of_birth"];
