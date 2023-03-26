@@ -37,7 +37,7 @@ if (!isset($_POST["username"]) || !isset($_POST["password"])) {
     // Handle missing fields
     echo "Please enter a username and password.";
 } else if ($Username == 'admin' && $Password == 'password123') {
-    header('Location: dashboard.php');
+    header('Location: microinv1.html');
     exit;
 } else {
     echo "Invalid username or password.";
