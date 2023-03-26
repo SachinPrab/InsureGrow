@@ -26,9 +26,8 @@
       </center>
     </p>
     </form>
-    <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST")
- {
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Get the form data
 	$name = $_POST["name"];
 	$username = $_POST["username"];
@@ -39,29 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$date_of_birth = $_POST["date_of_birth"];
 	$occupation = $_POST["occupation"];
 	$annual_income = $_POST["annual_income"];
-if (isset($_POST["terms"])) 
-$terms = test_input($_POST["terms"]);
-  else 
- $terms = "";
-
-            echo "<h2>Your Input:</h2>";
-            echo "Name: " . $name . "<br>";
-            echo "Email: " . $email . "<br>";
-            echo "Phone Number: " . $phone . "<br>";
-            echo "Username: " . $username . "<br>";
-            echo "Password: " . $password . "<br>";
-            echo "Address: " . $address . "<br>";
-            echo "Date of Birth: " . $dob . "<br>";
-            echo "Occupation: " . $occupation . "<br>";
-            echo "Terms and Conditions: " . $terms . "<br>";
-        }
-
-        function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
+ if (isset($_POST["terms"])) {
+                $terms = test_input($_POST["terms"]);
+            } else {
+                $terms = "";
+            }
     header("Location: success.php");
     exit();
 }
