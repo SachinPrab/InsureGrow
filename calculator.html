@@ -1,0 +1,59 @@
+<html>
+  <head><b><u><center> Investment Calculator </b></u></center></head>
+    <style>
+      label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input, button {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 20px;
+}
+    </style>
+    <body>
+    <label for="investment">Investment Amount:</label>
+<input type="number" id="investment" name="investment" required>
+
+<label for="duration">Investment Duration (in years):</label>
+<input type="number" id="duration" name="duration" required>
+
+<label for="rate">Interest Rate:</label>
+<input type="number" id="rate" name="rate" required>
+
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+      <script>
+        function calculate() {
+  const investment = document.getElementById("investment").value;
+  const duration = document.getElementById("duration").value;
+  const rate = document.getElementById("rate").value;
+
+  const total = investment * Math.pow(1 + rate/100, duration);
+  const interest = total - investment;
+
+  const result = `Total amount after ${duration} years: ${total.toFixed(2)}<br>
+                  Interest earned: ${interest.toFixed(2)}`;
+  document.getElementById("result").innerHTML = result;
+}
+      </script>
+    </body>
+</html>
