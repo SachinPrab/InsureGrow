@@ -1,8 +1,10 @@
-<?php 
-$username = $_POST['username'];
-$password = $_POST['password'];
+<?php
+$u = '';
+$p = '';
+$u = $_POST['username'];
+$p = $_POST['password'];
 $con = mysqli_connect("localhost","root","","signupdb");
-$sql="INSERT INTO studentdetails(username,password) values('$username','$password')";
+$sql="INSERT INTO studentdetails(username,password) values('$u','$p')";
 $r = mysqli_query($con,$sql);
 if($r)
 {
