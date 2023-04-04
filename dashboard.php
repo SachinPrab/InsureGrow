@@ -4,7 +4,7 @@ $p = '';
 $u = $_POST['username'];
 $p = $_POST['password'];
 $con = mysqli_connect("localhost","root","","signupdb");
-$sql="INSERT INTO studentdetails(username,password) values('$u','$p')";
+$sql="INSERT INTO login(username,password) values('$u','$p')";
 $r = mysqli_query($con,$sql);
 if($r)
 {
