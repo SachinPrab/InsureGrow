@@ -14,7 +14,7 @@
     }
   </style>
   <body>
-    <form method = "post" action="dashboard.php">
+    <form method = "POST" action="dashboard.php">
     <p>
       <center>
         <label for = "username"> Username </label> <input type="text"><br><br>
@@ -28,21 +28,6 @@
      <a href = ""> Forgot Password? <br><br>
       <a href = "SignUp.html"> Don't have an account? Click here to sign up for InsureGrow.</a><br><br>
         </center>
-      <?php 
-$Username = $_POST["username"];
-$Password = $_POST["password"];
-
-// Define keys before accessing them
-if (!isset($_POST["username"]) || !isset($_POST["password"])) {
-    // Handle missing fields
-    echo "Please enter a username and password.";
-} else if ($Username == 'admin' && $Password == 'password123') {
-    header('Location: microinv1.html');
-    exit;
-} else {
-    echo "Invalid username or password.";
-}
-?>
   </body>
 </html>
     
