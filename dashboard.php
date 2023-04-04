@@ -1,7 +1,7 @@
 <?php 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$con = mysqli_connect("localhost","root","","login");
+$con = mysqli_connect("localhost","root","","signupdb");
 $sql="INSERT INTO studentdetails(username,password) values('$username','$password')";
 $r = mysqli_query($con,$sql);
 if($r)
