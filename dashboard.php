@@ -1,15 +1,15 @@
 <?php 
-$Username = $_POST["username"];
-$Password = $_POST["password"];
-
-// Define keys before accessing them
-if (!isset($_POST["username"]) || !isset($_POST["password"])) {
-    // Handle missing fields
-    echo "Please enter a username and password.";
-} else if ($Username == 'admin' && $Password == 'password123') {
-    header('Location: file:///C:/Users/Nagu/Documents/microinvestment%20githhub/microinvestment-14/microinv1.html');
-    exit;
-} else {
-    echo "Invalid username or password.";
+$username = $_POST['username'];
+$password = $_POST['password'];
+$con = mysqli_connect("localhost","root","","login");
+$sql="INSERT INTO studentdetails(username,password) values('$username','$password')";
+$r = mysqli_query($con,$sql);
+if($r)
+{
+    echo "User details stored successfully";
+}
+else
+{
+    echo "User details have not been added";
 }
 ?>
