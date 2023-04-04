@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$occupation = $_POST["occupation"];
 	$annual_income = $_POST["annual_income"];
 	$con = mysqli_connect("localhost","root","","signupdb");
-$sql="INSERT INTO signup(username,password) values('$name','$username','$password','$email','$address','$phone_number','$date_of_birth','$occupation','$annual_income')";
+$sql="INSERT INTO signup(name,username,password,email,address,phone_number,date_of_birth,occupation,annual_income) values('$name','$username','$password','$email','$address','$phone_number','$date_of_birth','$occupation','$annual_income')";
 $q = mysqli_query($con,$sql);
 	if($q)
 	{
