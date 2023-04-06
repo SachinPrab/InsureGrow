@@ -8,7 +8,7 @@ $sql="INSERT INTO login(username,password) values('$u','$p')";
 $r = mysqli_query($con,$sql);
 if($r)
 {
-    echo "User details stored successfully";
+    echo "User details stored successfully" . "<br>";
 }
 else
 {
@@ -26,7 +26,7 @@ if ($result === false) {
 if (mysqli_num_rows($result) > 0) {
     // Fetch the row as an associative array
     $row = mysqli_fetch_assoc($result);
-    echo "Username: " . $row['username'] . "<br>";
+    echo "Welcome " . $row['username'] . "<br>";
 } else {
     echo "User not found";
 }
