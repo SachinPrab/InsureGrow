@@ -23,7 +23,7 @@ $sql="INSERT INTO signup(name,username,password,email,address,phone_number,date_
 		echo "User details have not been added in database";
 	}
 }
-$sql = "SELECT name, username, password,email, phone_number, date_of_birth, occupation, annual_income FROM signup";
+$sql = "SELECT name, username, password,email,address phone_number, date_of_birth, occupation, annual_income FROM signup";
 $result = mysqli_query($con, $sql);
 
 if ($result === false) {
