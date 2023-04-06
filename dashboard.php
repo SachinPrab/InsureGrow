@@ -14,7 +14,7 @@ else
 {
     echo "User details have not been added";
 }
-$sql = "SELECT username, password FROM login'";
+$sql = "SELECT username FROM login where username = '$u'";
 $result = mysqli_query($con, $sql);
 
 // Check if the query was successful
