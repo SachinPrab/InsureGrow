@@ -24,10 +24,15 @@ $sql="INSERT INTO signup(name,username,password,email,address,phone_number,date_
 	}
 }
 $sql = "SELECT name, username, password,email, phone_number, date_of_birth, occupation, annual_income FROM signup";
+$result = mysqli_query($con, $sql);
+
+if ($result === false) {
+    die("Query failed: " . mysqli_error($con));
+}
 // Check if there are any results
-if (mysqli_num_rows($q) > 0) {
+if (mysqli_num_rows($result) > 0) {
     // Output data of each row
-    while($row = mysqli_fetch_assoc($q)) {
+    while($row = mysqli_fetch_assoc($result)) {
         echo "Name: " . $row["name"]. "<br>";
         echo "Username: " . $row["username"]. "<br>";
         echo "Password: " . $row["password"]. "<br>";
