@@ -27,9 +27,8 @@ if (mysqli_num_rows($result) > 0) {
     // Fetch the row as an associative array
     $row = mysqli_fetch_assoc($result);
     echo "Username: " . $row['username'] . "<br>";
-    echo "Password: " . $row['password'] . "<br>";
 } else {
     echo "User not found";
 }
-mysqli_close($conn);
+mysqli_close($con);
 ?>
