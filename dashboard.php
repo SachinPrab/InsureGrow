@@ -19,7 +19,7 @@ $result = mysqli_query($con, $sql);
 
 // Check if the query was successful
 if ($result === false) {
-    die("Query failed: " . mysqli_error($conn));
+    die("Query failed: " . mysqli_error($con));
 }
 
 // Check if any rows were returned
