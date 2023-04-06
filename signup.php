@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$annual_income = $_POST["annual_income"];
 	$con = mysqli_connect("localhost","root","","signupdb");
 $sql="INSERT INTO signup(name,username,password,email,address,phone_number,date_of_birth,occupation,annual_income) values('$name','$username','$password','$email','$address','$phone_number','$date_of_birth','$occupation','$annual_income')";
-$q = mysqli_query($con,$sql);
+	$q = mysqli_query($con,$sql);
 	if($q)
 	{
 		echo "Thank you for registering with our website,Welcome to InsureGrow";
@@ -23,7 +23,7 @@ $q = mysqli_query($con,$sql);
 		echo "User details have not been added in database";
 	}
 }
-	$sql = "SELECT * FROM signup";
+$sql = "SELECT name, username, password,email, phone_number, date_of_birth, occupation, annual_income FROM signup";
 // Check if there are any results
 if (mysqli_num_rows($q) > 0) {
     // Output data of each row
