@@ -23,4 +23,24 @@ $q = mysqli_query($con,$sql);
 		echo "User details have not been added in database";
 	}
 }
+	$sql = "SELECT * FROM signup";
+// Check if there are any results
+if (mysqli_num_rows($q) > 0) {
+    // Output data of each row
+    while($row = mysqli_fetch_assoc($q)) {
+        echo "Name: " . $row["name"]. "<br>";
+        echo "Username: " . $row["username"]. "<br>";
+        echo "Password: " . $row["password"]. "<br>";
+	echo "Email: " . $row["email"]. "<br>";
+        echo "Address: " .$row["address"]. "<br>";
+        echo "Phone Number: " . $row["phone_number"]. "<br>";
+        echo "Date of Birth: " . $row["date_of_birth"]. "<br>";
+        echo "Occupation: " . $row["occupation"]. "<br>";
+        echo "Annual Income: " . $row["annual_income"]. "<br>";
+        echo "<br>";
+    }
+} 
+	else {
+    echo "No results found";
+}
 ?>
