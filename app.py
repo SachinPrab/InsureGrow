@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     # Define the API endpoint URL
-    url = "https://jsonplaceholder.typicode.com/todos/1"
+    url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=RELIANCE.BSE&outputsize=full&apikey=Q2DUWBMNUYAWW57M"
 
     # Send a GET request to the API endpoint
     response = requests.get(url)
