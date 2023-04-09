@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/stock.html')
 def home():
     # Define the API endpoint URL
     url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=RELIANCE.BSE&outputsize=full&apikey=Q2DUWBMNUYAWW57M"
@@ -17,7 +17,7 @@ def home():
         data = response.json()
 
         # Pass the data to the HTML template
-        return render_template('index.html', data=data)
+        return render_template('stocks.html', data=data)
     else:
         # If the request was not successful, return an error message
         return "Error: " + str(response.status_code)
