@@ -26,5 +26,11 @@ In addition to these two main types of stocks, there are also different classes 
      <a href = "stocksfaq.html">Stock Market FAQ</a><br>
     <a href = "contact.html">Contact us regarding Stock Market Investments</a>
     </center>
+     <div id="data-container">
+    <h2>Data</h2>
+        {% for date,prices in data.items() %}
+  <p>{{ date }} - Open: {{ prices['1. open'] }}, High: {{ prices['2. high'] }}, Low: {{ prices['3. low'] }}, Close: {{ prices['4. close'] }}</p>
+{% endfor %}
+   </div>
       </body>
 </html>
