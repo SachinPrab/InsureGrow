@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Stock Market Ticker</title>
-    <script src="ticker.js"></script>
-  </head>
-  <body>
-    <h1>Stock Market Ticker</h1>
-    <div id="ticker"></div>
-  </body>
+<head>
+	<title>Stock Market Ticker</title>
+	<style>
+		.ticker {
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		.ticker-item {
+			display: inline-block;
+			padding: 0 10px;
+			border-right: 1px solid #ccc;
+		}
+
+		.ticker-item:last-child {
+			border-right: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Stock Market Ticker</h1>
+	<div class="ticker" id="ticker"></div>
+	<script src="path/to/ticker.js"></script>
+</body>
 </html>
