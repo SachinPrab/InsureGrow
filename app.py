@@ -22,7 +22,7 @@ def home():
         # Extract the JSON response data
         data = response.json()
         # Pass the data to the HTML template
-        return render_template('stocks.html', data=data['Time Series (Daily)'])
+        return render_template('ticker.html', data=data['Time Series (Daily)'])
     else:
         # If the request was not successful, return an error message
         return "Error: " + str(response.status_code)
