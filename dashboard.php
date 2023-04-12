@@ -5,8 +5,8 @@
 
 <style>
   body {
-    background-color: <?php echo $backgroundColor; ?>;
-    border: 2px solid <?php echo $borderColor; ?>;
+    background-color: #ffffff; 
+    border: 2px solid #00ff00; 
     padding: 10px;
     margin: 20px;
   }
