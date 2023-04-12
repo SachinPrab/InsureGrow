@@ -1,6 +1,6 @@
 <?php
-  $backgroundColor = '#ffffff'; // White background color
-  $borderColor = '#00ff00'; // Green border color
+  $backgroundColor = '#ffffff'; 
+  $borderColor = '#00ff00'; 
 ?>
 
 <style>
