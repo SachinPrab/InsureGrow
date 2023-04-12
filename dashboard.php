@@ -1,14 +1,3 @@
-<html>
-    <head>
-    <title> Welcome To InsureGrow <b><u></title>
-        </head>
-        <style>
-            { 
-                body: background-color: #FFFFF0;
-                border: 2px solid green;
-            }
-        </style>
-        <body>
 <?php
 $u = '';
 $p = '';
@@ -43,5 +32,4 @@ if (mysqli_num_rows($result) > 0) {
 }
 mysqli_close($con);
 ?>
-        </body>
-        </html>
+        
