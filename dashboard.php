@@ -4,9 +4,7 @@
 ?>
 
 <html>
-<head>
   <title>Welcome To InsureGrow<b><u><center></title>
-</head>
     <style>
   body {
     background-color: #ffffff; 
