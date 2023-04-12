@@ -2,14 +2,26 @@
   $backgroundColor = '#ffffff'; 
   $borderColor = '#00ff00'; 
 ?>
-<style>
+
+<html>
+<head>
+  <title>Welcome To InsureGrow<b><u><center></title>
+</head>
+    <style>
   body {
     background-color: #ffffff; 
     border: 2px solid #00ff00; 
+     font-size: 20px;
     padding: 10px;
     margin: 20px;
   }
 </style>
+<body>
+  <center>
+  <p>welcome to dashboard</p>
+  </center>
+</body>
+</html>
 <?php
 $u = '';
 $p = '';
