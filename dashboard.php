@@ -1,7 +1,7 @@
 <?php
   $backgroundColor = '#ffffff'; 
   $borderColor = '#00ff00'; 
-?>
+
 
 <style>
   body {
