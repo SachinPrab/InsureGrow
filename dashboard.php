@@ -1,4 +1,17 @@
 <?php
+  $backgroundColor = '#ffffff'; // White background color
+  $borderColor = '#00ff00'; // Green border color
+?>
+
+<style>
+  body {
+    background-color: <?php echo $backgroundColor; ?>;
+    border: 1px solid <?php echo $borderColor; ?>;
+    padding: 10px;
+    margin: 20px;
+  }
+</style>
+
 $u = '';
 $p = '';
 $u = $_POST['username'];
