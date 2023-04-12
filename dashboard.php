@@ -1,8 +1,7 @@
 <?php
   $backgroundColor = '#ffffff'; 
   $borderColor = '#00ff00'; 
-
-
+?>
 <style>
   body {
     background-color: #ffffff; 
@@ -11,7 +10,7 @@
     margin: 20px;
   }
 </style>
-
+<?php
 $u = '';
 $p = '';
 $u = $_POST['username'];
