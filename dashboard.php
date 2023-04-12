@@ -4,7 +4,6 @@
 ?>
 
 <html>
-  <title>Welcome To InsureGrow<b><u><center></title>
     <style>
   body {
     background-color: #ffffff; 
@@ -16,7 +15,7 @@
 </style>
 <body>
   <center>
-  <p>welcome to dashboard</p>
+  <p>Welcome To InsureGrow</p>
   </center>
 </body>
 </html>
