@@ -52,4 +52,11 @@ fetch(url)
 		const scrollInterval = 3000;
 
 		// Set the ticker scrolling interval
-		setInterval(scrollTicker,
+		setInterval(scrollTicker, scrollInterval);
+	});
+
+// Start the scrolling animation when the page loads
+window.addEventListener('load', () => {
+	const tickerContainer = document.getElementById('ticker-container');
+	tickerContainer.classList.add('ticker-container-start');
+});
