@@ -22,6 +22,7 @@
 <body>
 	<h1>Stock Market Ticker</h1>
 	// Define the API endpoint URL
+	<script lang="text/javascript">
 const url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=RELIANCE.BSE&outputsize=full&apikey=Q2DUWBMNUYAWW57M';
 const data = {{ data | tojson }};
 const dataEntries = Object.entries(data);
@@ -83,6 +84,6 @@ window.addEventListener('load', () => {
 	const tickerContainer = document.getElementById('ticker-container');
 	tickerContainer.classList.add('ticker-container-start');
 });
-
+	</script>
 </body>
 </html>
