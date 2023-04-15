@@ -14,6 +14,7 @@ def home():
         values['2. high'] = float(values['2. high'])
         values['3. low'] = float(values['3. low'])
         values['4. close'] = float(values['4. close'])
+        values['6. volume'] = float(values['6. volume'])
     # Send a GET request to the API endpoint
     response = requests.get(url)
 
