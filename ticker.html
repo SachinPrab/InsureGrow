@@ -3,42 +3,83 @@
 <head>
 	<title>Stock Market Ticker</title>
 </head>
+<style>
+.ticker {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ticker p {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ticker-item {
+  display: inline-block;
+  margin-right: 20px;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
 <body>
 	<h1>Stock Market Ticker</h1>
 	<h2>Reliance Industries</h2>
 	<div class="ticker" id="reliance-ticker">
 		{% for date, values in reliance_data.items() %}
+		<div class="ticker-item">
 		<p>Date: {{ date }}</p>
 		<p>Open: {{ values['1. open'] }}</p>
 		<p>High: {{ values['2. high'] }}</p>
 		<p>Low: {{ values['3. low'] }}</p>
 		<p>Close: {{ values['4. close'] }}</p>
 		<p>Volume: {{ values['6. volume'] }}</p>
-		{% endfor %}
+		</div>
+			{% endfor %}
 	</div>
 
 	<h2>Tata Consultancy Services</h2>
 	<div class="ticker" id="tcs-ticker">
 		{% for date, values in tcs_data.items() %}
+		<div class="ticker-item">
 		<p>Date: {{ date }}</p>
 		<p>Open: {{ values['1. open'] }}</p>
 		<p>High: {{ values['2. high'] }}</p>
 		<p>Low: {{ values['3. low'] }}</p>
 		<p>Close: {{ values['4. close'] }}</p>
 		<p>Volume: {{ values['6. volume'] }}</p>
-		{% endfor %}
+		</div>
+			{% endfor %}
 	</div>
 
 	<h2>Google</h2>
 	<div class="ticker" id="google-ticker">
 		{% for date, values in google_data.items() %}
+		<div class="ticker-item">
 		<p>Date: {{ date }}</p>
 		<p>Open: {{ values['1. open'] }}</p>
 		<p>High: {{ values['2. high'] }}</p>
 		<p>Low: {{ values['3. low'] }}</p>
 		<p>Close: {{ values['4. close'] }}</p>
 		<p>Volume: {{ values['6. volume'] }}</p>
+			</div>
 		{% endfor %}
 	</div>
+<script>
+  const tickers = document.querySelectorAll('.ticker');
+  tickers.forEach(ticker => {
+    function scrollTicker() {
+      ticker.appendChild(ticker.firstChild);
+    }
+    const scrollInterval = 3000;
+   setInterval(scrollTicker, scrollInterval);
+  });
+</script>
 </body>
 </html>
