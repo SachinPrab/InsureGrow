@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stock Market Ticker - Reliance Industries Limited</title>
+	<title>Stock Market Ticker</title>
 </head>
 <body>
 	<h1>Stock Market Ticker</h1>
-	<h2>Reliance Industries Limited</h2>
-    <div class="ticker" id="ticker">
-        {% for date, values in data.items() %}
-        <p>Date: {{ date }}</p>
-        <p>Open: {{ values['1. open'] }}</p>
-        <p>High: {{ values['2. high'] }}</p>
-        <p>Low: {{ values['3. low'] }}</p>
-        <p>Close: {{ values['4. close'] }}</p>
-	    <p>Volume: {{ values['6. volume'] }}</p>   
-        <hr>
-        {% endfor %}
-    </div>
+	<h2>Reliance Industries</h2>
+	<div class="ticker" id="reliance-ticker">
+		{% for date, values in reliance_data.items() %}
+		<p>Date: {{ date }}</p>
+		<p>Open: {{ values['1. open'] }}</p>
+		<p>High: {{ values['2. high'] }}</p>
+		<p>Low: {{ values['3. low'] }}</p>
+		<p>Close: {{ values['4. close'] }}</p>
+		<p>Volume: {{ values['6. volume'] }}</p>
+		{% endfor %}
+	</div>
+
+	<h2>Tata Consultancy Services</h2>
+	<div class="ticker" id="tcs-ticker">
+		{% for date, values in tcs_data.items() %}
+		<p>Date: {{ date }}</p>
+		<p>Open: {{ values['1. open'] }}</p>
+		<p>High: {{ values['2. high'] }}</p>
+		<p>Low: {{ values['3. low'] }}</p>
+		<p>Close: {{ values['4. close'] }}</p>
+		<p>Volume: {{ values['6. volume'] }}</p>
+		{% endfor %}
+	</div>
+
+	<h2>Google</h2>
+	<div class="ticker" id="google-ticker">
+		{% for date, values in google_data.items() %}
+		<p>Date: {{ date }}</p>
+		<p>Open: {{ values['1. open'] }}</p>
+		<p>High: {{ values['2. high'] }}</p>
+		<p>Low: {{ values['3. low'] }}</p>
+		<p>Close: {{ values['4. close'] }}</p>
+		<p>Volume: {{ values['6. volume'] }}</p>
+		{% endfor %}
+	</div>
 </body>
 </html>
