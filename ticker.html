@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Stock Market Ticker</title>
+    <title>Stock Market Ticker</title>
 </head>
 <body>
-	<div class = "ticker" id = "ticker">
-		{{data}}
-	</div>
+    <div class="ticker" id="ticker">
+        {% for date, values in data.items() %}
+        <p>Date: {{ date }}</p>
+        <p>Open: {{ values['1. open'] }}</p>
+        <p>High: {{ values['2. high'] }}</p>
+        <p>Low: {{ values['3. low'] }}</p>
+        <p>Close: {{ values['4. close'] }}</p>
+	    <p>Volume: {{ values['5.volume'] }}</p>   
+        <hr>
+        {% endfor %}
+    </div>
 </body>
 </html>
