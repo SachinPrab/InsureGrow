@@ -1,1 +1,83 @@
+<html>
+  <head>
+      <center>
+    <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\logo.png">
+      </center>
+    </div>
+</head>
+  <style>
+    img 
+    {
+      height: 50px;
+      weight: 50px;
+      }
+    head
+    { 
+      font-size: 30px; 
+    }
+    body {
+  background-image: url("https://dr5dymrsxhdzh.cloudfront.net/blog/images/a82fa497e/2019/04/financial-planning-picture-id611999050.jpg");
+      background-size: cover;
+      background-position: center;
+  color: green;
+        font-size: 25px;
+}
+      h1 {
+  background-color: lavender;
+  color: green;
+}
+p {
+  background-color: lightgreen;
+  color: white;
 
+    }
+    a:hover {
+  color: red;
+} 
+    .sociallogo {
+      height:10px;
+      weight: 10px;
+    }
+  </style>
+    <body>
+      
+      <marquee behavior="alternate" direction="left" width:30% height:50%>Join the investment revolution,one click at a time.</marquee> <br>
+      <p><center><b>What would you like to learn about/invest in today?</b><br>
+       <label for="page-select">Select a Page:</label>
+  <select id="page-select" onchange="goToPage()">
+    <option value="">Choose a page</option>
+    <option value="stocks.html"> Stock Investments </option>
+    <option value="mutualfunds.html"> Mutual Funds </option>
+    <option value="fds.html">Fixed deposits (FDs) </option>
+      <option value = "healthinsurance.html"> Health Insurance </option>
+      <option value = "terminsurance.html"> Term Insurance </option>
+      <option value = "bonds.html"> Bonds </option>
+  </select><br><br>
+        <a href = "calculator.html"> Investment Calculator </a><br>
+        <a href = "termsconditions.html">Terms and Conditions </a><br>
+        <a href = "aboutus.html">About Us</a><br><br>
+        Help spread the word about our website!
+        <div class = "sociallogo">
+                  <a href = "https://www.facebook.com/"><img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\facebooklogo.png"></a>
+         <a href = "https://twitter.com/"><img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\twitterlogo.jpeg"></a>
+         <a href = "https://www.linkedin.com/"><img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\linkedinlogo (1).png"></a>
+         <a href = "https://www.reddit.com/"><img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\redditlogo.png"></a>
+       <a href = "https://www.whatsapp.com/"> <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\whatsapplogo.png"></a>                                                                                                                          
+         <a href = "mailto:sachinp@gmail.com"> <img src = "C:\Users\User\Desktop\microinvestment\microinvestment 3\gmaillogo.png"></a>
+                                                                                                                                     
+                  </div>
+        </p>
+  <script type = "text/javascript">
+    function goToPage() {
+      var url = document.getElementById("page-select").value;
+      if (url) {
+        window.location.href = url;
+      }
+    }
+    navigator.share({title: InsureGrow, url: new URL("C:\Users\User\Desktop\microinvestment\microinvestment 3\microinv1.html").href, text: 'Welcome to InsureGrow'});
+  </script>
+      </center>
+      </p>
+      </h1> <br><br>
+</body>
+</html>
