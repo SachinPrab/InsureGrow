@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head><b><u> Mutual Funds Calculator </b></u></head>
-<link rel="stylesheet" type="text/css" href="mutualfundscalcstyle.css">
-<body>
-<div class="calculator">
-  <h2>Mutual Fund Calculator</h2>
-  <form>
-    <label for="principal">Initial Investment Amount:</label>
-    <input type="number" id="principal" name="principal" required>
+  <head>
+    <title>Mutual Fund Calculator</title>
+    <style>
+      /* Style the form and results section */
+      body {
+        background-color: lightgrey;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      fieldset {
+        padding: 20px;
+        border: 2px solid green;
+        border-radius: 10px;
+        background-color: #f1f1f1;
+      }
+      legend {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      input[type="number"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        background-color: #fff;
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Mutual Fund Calculator</legend>
+        <label for="investment">Investment Amount (in Indian Rupees)</label>
+        <input type="number" id="investment" min="1000" step="1000" required>
+        <label for="duration">Investment Duration (in years)</label>
+        <input type="number" id="duration" min="1" required>
+        <label for="rate">Expected Annual Rate of Return (%)</label>
+        <input type="number" id="rate" min="0" max="100" step="0.1" required>
+        <input type="submit" value="Calculate" onclick="calculate()">
+      </fieldset>
+    </form>
+    <div class="result" id="result"></div>
+    <script>
+      function calculate() {
+        // Get the user inputs
+        const investment = parseFloat(document.getElementById("investment").value);
+        const duration = parseFloat(document.getElementById("duration").value);
+        const rate = parseFloat(document.getElementById("rate").value);
 
-    <label for="monthly-investment">Monthly Investment Amount:</label>
-    <input type="number" id="monthly-investment" name="monthly-investment" required>
+        // Calculate the future value of the investment
+        const futureValue = investment * Math.pow(1 + rate / 100, duration);
 
-    <label for="num-years">Number of Years:</label>
-    <input type="number" id="num-years" name="num-years" required>
-
-    <label for="annual-return">Annual Return Rate:</label>
-    <input type="number" id="annual-return" name="annual-return" step="0.01" min="0" max="100" required>
-
-    <button type="button" onclick="calculate()">Calculate</button>
-  </form>
-  <div id="result"></div>
-</div>
-<script>
-function calculate() {
-  var principal = Number(document.getElementById("principal").value);
-  var monthly_investment = Number(document.getElementById("monthly-investment").value);
-  var num_years = Number(document.getElementById("num-years").value);
-  var annual_return = Number(document.getElementById("annual-return").value) / 100;
-
-  var total_investment = principal + monthly_investment * 12 * num_years;
-  var monthly_return = Math.pow(1 + annual_return / 12, 12 / 12) - 1;
-  var final_value = total_investment * Math.pow(1 + monthly_return, num_years * 12);
-
-  var result = document.getElementById("result");
-  result.innerHTML = "The final value of your mutual fund after " + num_years + " years is: $" + final_value.toFixed(2);
-}
-</script>
-</body>
+        // Display the result to the user
+        document.getElementById("result").innerHTML = `At an expected annual rate of return of ${rate}%, your investment of ${investment} INR will grow to ${futureValue.toFixed(2)} INR in ${duration} years.`;
+      }
+    </script>
+  </body>
 </html>
