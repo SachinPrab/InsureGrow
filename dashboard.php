@@ -29,7 +29,7 @@ $sql="INSERT INTO login(username,password) values('$u','$p')";
 $r = mysqli_query($con,$sql);
 if($r)
 {
-    echo "Thank you for registering with our website, $name. Welcome to InsureGrow. Please click <a href='homepage.html'>here</a> to continue.";
+    echo "Welcome to InsureGrow. Please click <a href='homepage.html'>here</a> to continue.";
 }
 else
 {
