@@ -22,5 +22,20 @@
   </form>
   <div id="result"></div>
 </div>
+<script>
+function calculate() {
+  var principal = Number(document.getElementById("principal").value);
+  var monthly_investment = Number(document.getElementById("monthly-investment").value);
+  var num_years = Number(document.getElementById("num-years").value);
+  var annual_return = Number(document.getElementById("annual-return").value) / 100;
+
+  var total_investment = principal + monthly_investment * 12 * num_years;
+  var monthly_return = Math.pow(1 + annual_return / 12, 12 / 12) - 1;
+  var final_value = total_investment * Math.pow(1 + monthly_return, num_years * 12);
+
+  var result = document.getElementById("result");
+  result.innerHTML = "The final value of your mutual fund after " + num_years + " years is: $" + final_value.toFixed(2);
+}
+</script>
 </body>
 </html>
