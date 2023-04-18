@@ -1,64 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mutual Fund Calculator</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<title>Mutual Fund Chart</title>
+	<!-- Include Highcharts library -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
-	<div>
-		<label for="investment_amount">Investment Amount:</label>
-		<input type="number" id="investment_amount" name="investment_amount" min="1" required>
-	</div>
-	<div>
-		<label for="fund_a">Fund A:</label>
-		<input type="number" id="fund_a" name="fund_a" min="0" required>
-	</div>
-	<div>
-		<label for="fund_b">Fund B:</label>
-		<input type="number" id="fund_b" name="fund_b" min="0" required>
-	</div>
-	<button id="calculate_btn">Calculate</button>
-	<div>
-		<canvas id="chart"></canvas>
-	</div>
-	<script>
-		$(document).ready(function() {
-			$("#calculate_btn").click(function() {
-				var investment_amount = $("#investment_amount").val();
-				var fund_a = $("#fund_a").val();
-				var fund_b = $("#fund_b").val();
+	<!-- Create container element for the chart -->
+	<div id="chart-container"></div>
 
-				var ctx = document.getElementById('chart').getContext('2d');
-				var myChart = new Chart(ctx, {
-					type: 'pie',
-					data: {
-						labels: ['Fund A', 'Fund B'],
-						datasets: [{
-							label: 'Investment Distribution',
-							data: [fund_a, fund_b],
-							backgroundColor: [
-								'rgb(255, 99, 132)',
-								'rgb(54, 162, 235)'
-							],
-							hoverOffset: 4
-						}]
-					},
-					options: {
-						responsive: true,
-						plugins: {
-							title: {
-								display: true,
-								text: 'Investment Distribution Chart'
-							},
-							legend: {
-								position: 'bottom'
-							}
-						}
-					}
-				});
-			});
+	<script>
+		// Create chart object
+		var chart = Highcharts.chart('chart-container', {
+		    chart: {
+		        type: 'line'
+		    },
+		    title: {
+		        text: 'Mutual Fund Performance'
+		    },
+		    xAxis: {
+		        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+		    },
+		    yAxis: {
+		        title: {
+		            text: 'Net Asset Value'
+		        }
+		    },
+		    series: [{
+		        name: 'HDFC Mutual Fund',
+		        data: [100, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220]
+		    }, {
+		        name: 'ICICI Prudential Mutual Fund',
+		        data: [80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190]
+		    }, {
+		        name: 'SBI Mutual Fund',
+		        data: [70, 85, 110, 135, 150, 160, 170, 180, 195, 210, 225, 235]
+		    }, {
+		        name: 'Aditya Birla Sun Life Mutual Fund',
+		        data: [120, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240]
+		    }]
 		});
+
+		// Render the chart
+		chart.render();
 	</script>
 </body>
 </html>
