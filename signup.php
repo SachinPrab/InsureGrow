@@ -1,4 +1,26 @@
 <?php
+  $backgroundColor = '#ffffff'; 
+  $borderColor = '#00ff00'; 
+?>
+
+<html>
+    <style>
+  body {
+    background-color: #ffffff; 
+    border: 2px solid #00ff00; 
+     font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+  }
+</style>
+<body>
+  <center>
+  <p>Welcome To InsureGrow</p>
+  </center>
+</body>
+</html>
+
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	// Get the form data
