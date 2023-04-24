@@ -88,22 +88,18 @@
     <p id="bond-price"></p>
 
     <script>
-      function calculateBondPrice() {
-        // Get the input values from the user
-        const faceValue = document.getElementById("face-value").value;
-        const couponRate = document.getElementById("coupon-rate").value;
-        const yearsToMaturity = document.getElementById("years-to-maturity").value;
-        const yieldToMaturity = document.getElementById("yield-to-maturity").value;
+  function calculateBondPrice() {
+  // Get the input values from the user
+  const faceValue = document.getElementById("face-value").value;
+  const couponRate = document.getElementById("coupon-rate").value;
+  const yearsToMaturity = document.getElementById("years-to-maturity").value;
+  const yieldToMaturity = document.getElementById("yield-to-maturity").value;
 
-        // Convert the inputs to numbers
-        const fv = parseFloat(faceValue);
-        const c = parseFloat(couponRate);
-        const n = parseFloat(yearsToMaturity);
-        const ytm = parseFloat(yieldToMaturity);
-
-        // Calculate the bond price
-        const price = (c * fv / ytm * (1 - 1 / Math.pow
-
+  // Convert the inputs to numbers
+  const fv = parseFloat(faceValue);
+  const c = parseFloat(couponRate);
+  const n = parseFloat(yearsToMaturity);
+  const ytm = parseFloat(yieldToMaturity);
 
   // Calculate the bond price
   const price = (c * fv / ytm * (1 - 1 / Math.pow(1 + ytm, n))) + (fv / Math.pow(1 + ytm,n));
