@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bond Price Calculator</title>
+    <style>
+      /* Center the calculator on the page */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Style the heading */
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      /* Style the form */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+
+      /* Style the labels and inputs */
+      label {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+
+      input {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      /* Style the button */
+      button {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      button:hover {
+        background-color: #0062cc;
+      }
+
+      /* Style the bond price */
+      #bond-price {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bond Price Calculator</h1>
+    <form>
+      <label for="face-value">Face Value:</label>
+      <input type="number" id="face-value" name="face-value"><br><br>
+      
+      <label for="coupon-rate">Coupon Rate:</label>
+      <input type="number" id="coupon-rate" name="coupon-rate"><br><br>
+      
+      <label for="years-to-maturity">Years to Maturity:</label>
+      <input type="number" id="years-to-maturity" name="years-to-maturity"><br><br>
+      
+      <label for="yield-to-maturity">Yield to Maturity:</label>
+      <input type="number" id="yield-to-maturity" name="yield-to-maturity"><br><br>
+      
+      <button type="button" onclick="calculateBondPrice()">Calculate</button>
+    </form>
+    
+    <p id="bond-price"></p>
+
+    <script>
+      function calculateBondPrice() {
+        // Get the input values from the user
+        const faceValue = document.getElementById("face-value").value;
+        const couponRate = document.getElementById("coupon-rate").value;
+        const yearsToMaturity = document.getElementById("years-to-maturity").value;
+        const yieldToMaturity = document.getElementById("yield-to-maturity").value;
+
+        // Convert the inputs to numbers
+        const fv = parseFloat(faceValue);
+        const c = parseFloat(couponRate);
+        const n = parseFloat(yearsToMaturity);
+        const ytm = parseFloat(yieldToMaturity);
+
+        // Calculate the bond price
+        const price = (c * fv / ytm * (1 - 1 / Math.pow(1 + ytm, n))) + (fv / Math.pow(1 + ytm,    n);
+
+    // Update the bond price element
+    document.getElementById("bond-price").innerHTML = `Bond Price: $${price.toFixed(2)}`;
+  }
+</script>
+  </body>
+</html>
