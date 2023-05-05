@@ -1,12 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.PreparedStatement" %>
+    <%@ page import="java.sql.Connection" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.sql.DriverManager" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <style>
   body {
-    background-color: <%=backgroundColor %>; 
-    border: 2px solid <%=borderColor %>; 
+ background-color: lightgrey; 
+ border: 2px solid green;
     font-size: 20px;
     padding: 10px;
     margin: 20px;
